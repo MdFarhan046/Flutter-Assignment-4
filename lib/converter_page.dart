@@ -18,15 +18,16 @@ class _ConverterPageState extends State<ConverterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.brown,
-        title: Center(child: Text("ConverterPage")),
+        backgroundColor: Colors.green,
+        centerTitle: true,
+        title: Text("ConverterPage"),
       ),
       body: Center(
         child: SizedBox(
           height: 400,
           width: 300,
           child: Card(
-            color: Colors.brown,
+            color:Colors.green,
             child: Padding(
               padding: const EdgeInsets.all(20),
               child: Column(
@@ -46,12 +47,15 @@ class _ConverterPageState extends State<ConverterPage> {
                     //autovalidateMode: AutovalidateMode.onUserInteraction,
                     child: InputField(
                       controller: controller,
+                      obsecureText: false,
                       keyboardType: TextInputType.numberWithOptions(
                         decimal: true,
                       ),
                       validator: (value) {
-                        if (controller.text.isEmpty) {
+                        if (value==null||value.isEmpty) {
                           return "Field cannot be empty";
+                        }else if(!RegExp(r'^\d+$').hasMatch(value)){
+                             return "Enter a valid number";
                         }
                         return null;
                       },

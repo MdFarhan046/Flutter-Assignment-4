@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:md_farhan_ahmed_046_63b/home_page.dart';
+import 'package:md_farhan_ahmed_046_63b/auth/auth_gate.dart';
+import 'package:md_farhan_ahmed_046_63b/upload_page.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 
@@ -20,7 +21,10 @@ class MyApp extends StatelessWidget {
      return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
-      home: HomePage(),
+      home: AuthGate(),
+       // home: StopwatchPage(),
+      // home:UploadPage(),
+
      );
   }
 }
